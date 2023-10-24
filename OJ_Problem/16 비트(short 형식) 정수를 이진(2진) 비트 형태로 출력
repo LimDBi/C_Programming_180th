@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+void print_bits(short x) {
+    int bits = sizeof(short) * 8;       //sizeof(short)는 단위가 바이트. 바이트 --> 비트로 만드려면 *8
+    for (int i = bits - 1; i >= 0; i--) {
+        putchar(((x >> i) & 1U) ? '1' : '0');
+    }
+}
+int main() {
+    short x;
+    scanf("%hd", &x);
+    if (x < 0) {
+        x = -x;
+    }
+    print_bits(x);
+    return 0;
+}
