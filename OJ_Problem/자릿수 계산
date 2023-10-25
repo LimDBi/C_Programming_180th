@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+  int n;
+  printf("정수 하나를 입력하시오: ");
+  scanf("%d", &n);
+  int count = 0;
+  int temp = n;
+  while(temp > 0){
+    temp /= 10;
+    count ++;
+  }
+  printf("%d는 %d자리 입니다.\n", n, count);
+  return 0;
+}
